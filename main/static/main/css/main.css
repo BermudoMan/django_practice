@@ -1,3 +1,77 @@
 body {
     background: rgba(15, 40, 7, 1)
 }
+.back {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: rgba(25, 25, 25, 1);
+    opacity: 0.9;
+}
+.container {
+    margin-top: 10px;
+    position: relative;
+    text-align: center;
+}
+.title {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top {
+    margin-top: 10px;
+    margin-left: 310px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+}
+
+aside {
+    float: right;
+    width: 20 %;
+    padding: 2.5%;
+    height: 100vh;
+    boarder-right: 5px solid #4d4d4d;
+    z-index: 1;
+}
+
+p {
+    text-align: center;
+}
+
+img {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    align: center;
+}
+
+
+aside a {
+    position: fixed;
+    size: fixed;
+	right: 50px;
+	top: 50px;
+    list-style: none;
+    text-decoration: none;
+}
+
+aside a {
+    font-size: 52px;
+    color: #fff;
+    display: block;
+    transition: transform .4s ease;
+}
+
+aside a:hover {
+    font-size: 52px;
+    color: #eb5959;
+    transform: scale(1.25);
+}
+
+

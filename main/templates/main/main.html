@@ -1,9 +1,25 @@
 {% extends 'main/layout.html' %}
-
+{% load static %}
 {% block title %}Главная страница{% endblock %}
 
 {% block content %}
-    <h1>Страница Джорди</h1>
 
-    {% include 'main/photo_scroller.html' %}
+<div class="back">
+    <div class="container">
+        <h1 class="title">msJordi</h1>
+        <p><img src="{% static 'main/img/Jordi_looks_up.jpg' %}" alt="1"></p>
+    </div>
+</div>
+
+<div class="gallery">
+    <h2 class="2title">Photo</h2>
+</div>
+
+{% for i in items %}
+    <img src="{% static '{{ i }}' %}" alt="1"></p>
+    <h1>{{ i }}</h1>
+{% endfor %}
+<!--{{ items }}-->
+
+<!--    {% include 'main/photo_scroller.html' %}-->
 {% endblock %}
