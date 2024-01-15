@@ -12,14 +12,39 @@
 </div>
 
 <div class="gallery">
-    <h2 class="2title">Photo</h2>
+
+    <p>Photogallery</p>
+<!--    <div class="photo_content">-->
+<!--        {% for i in items %}-->
+<!--            <p><img class="Photogallery_item" src="{{ i }}"></p>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+
+    <div class="carousel_main_css">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for i in items %}
+                    <div class="carousel-item active">
+
+                        <img src="{{ i }}" class="d-block w-100" alt="...">
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
 </div>
 
-{% for i in items %}
-    <img src="{% static '{{ i }}' %}" alt="1"></p>
-    <h1>{{ i }}</h1>
-{% endfor %}
-<!--{{ items }}-->
 
-<!--    {% include 'main/photo_scroller.html' %}-->
 {% endblock %}
