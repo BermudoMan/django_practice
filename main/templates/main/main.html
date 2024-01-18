@@ -7,26 +7,20 @@
 <div class="back">
     <div class="container">
         <h1 class="title">msJordi</h1>
-        <p><img src="{% static 'main/img/Jordi_looks_up.jpg' %}" alt="1"></p>
+        <p><img class='title_img' src="{% static 'main/img/Jordi_looks_up.jpg' %}" alt="1"></p>
     </div>
 </div>
 
-<div class="gallery">
+<p class="comment_on_the_main_page"> Landing Page of my cat named Jordi </p>
 
-    <p>Photogallery</p>
-<!--    <div class="photo_content">-->
-<!--        {% for i in items %}-->
-<!--            <p><img class="Photogallery_item" src="{{ i }}"></p>-->
-<!--        {% endfor %}-->
-<!--    </div>-->
-
+<div class="gallery" id="gallery">
+    <a class="gallery-title" href="#gallery">Photogallery</a>
     <div class="carousel_main_css">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 {% for i in items %}
                     <div class="carousel-item active">
-
-                        <img src="{{ i }}" class="d-block w-100" alt="...">
+                        <img src="{{ i }}" class="Photogallery_item" alt="...">
                     </div>
                 {% endfor %}
             </div>
@@ -42,9 +36,5 @@
             </button>
         </div>
     </div>
-
-
 </div>
-
-
 {% endblock %}
