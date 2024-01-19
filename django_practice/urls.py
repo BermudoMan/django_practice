@@ -7,4 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('load_img', include('load_img.urls')),
+    path('', include('news.urls')),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

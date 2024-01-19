@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import GalleryItem
+from news.models import Events
 
 def index(request):
     items = GalleryItem.objects.values('title')
@@ -15,4 +16,9 @@ def index(request):
 
 def about(request):
     return render(request, 'main/about.html')
+
+def news_on_page(request):
+    event = Events.objects.all()
+    return render(request, 'main/layout.html', {'event': event})
+
 
