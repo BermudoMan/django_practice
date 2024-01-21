@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from .models import GalleryItem
-from news.models import Events
+from django.shortcuts import render, redirect
+from .models import GalleryItem, Events
+from .forms import EventsForm
+
 
 def index(request):
     items = GalleryItem.objects.values('title')
@@ -12,13 +13,35 @@ def index(request):
         j = j.replace("dict_values(['", "static/main/img/")
         j = j.replace("'])", '.jpg')
         corr_items.append(j)
-    return render(request, 'main/main.html', {'items': corr_items})
+
+    event = Events.objects.order_by('-date')
+
+    return render(request, 'main/main.html', {'items': corr_items, 'event': event})
 
 def about(request):
     return render(request, 'main/about.html')
 
-def news_on_page(request):
-    event = Events.objects.all()
-    return render(request, 'main/layout.html', {'event': event})
+# def news(request):
+#     event = Events.objects.order_by('-date')
+#     return render(request, 'main/main.html', {'event': event})
 
 
+def create_new(request):
+    # check data from form
+    error = ''
+    if request.method == "POST":
+        form = EventsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        else:
+            error('Bad form')
+    #
+    form = EventsForm()
+
+    data = {
+            'form': form,
+            'error': error
+        }
+
+    return render(request, 'main/create_new.html', data)

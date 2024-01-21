@@ -38,14 +38,20 @@
 </div>
 
 <p class="news_style_text" href="#news">Some events in the life of a pet</p>
-{{ event }}
-<div>
-    {{ news_ }}
-    {% for j in news_ %}
-        <p>dsdfsdf</p>
-        <h3> {{ el.date }} </h3>
-        <h3> {{ el.text }} </h3>
-    {% endfor %}
+
+<div class="events_all_block_style">
+    {% if event %}
+        {% for el in event %}
+            <div class="events">
+                <a class="date"> {{ el.date }} </a>
+                <a class="text"> {{ el.text }} </a>
+            </div>
+
+        {% endfor %}
+    {% else %}
+        <p>Events does not exist</p>
+    {% endif %}
 </div>
+
 {% endblock %}
 

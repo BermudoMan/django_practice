@@ -120,7 +120,7 @@ aside a:hover {
     font-size: 30px;
 }
 
-.a {
+.gallery-title {
     text-decoration:none;
     font-size: 42px;
     color: #fff;
@@ -128,10 +128,9 @@ aside a:hover {
     transition: transform .4s ease;
 }
 
-a:hover {
-    font-size: 52px;
+.gallery-title:hover {
     color: #eb5959;
-    transform: scale(1.25);
+    transform: scale(1.15);
 }
 
 .home {
@@ -160,7 +159,7 @@ a:hover {
     text-decoration: none;
 }
 
-.news {
+.create_new {
     position: fixed;
     size: fixed;
 	right: 55px;
@@ -174,4 +173,33 @@ form {
     margin-left: 32%;
     width: 500px;
     margin-top: 50px;
+}
+
+.events_all_block_style {
+}
+
+
+.events {
+    background: rgba(25, 25, 25, 1);
+    margin: 20px 11% 20px 11%;
+    text-align: left;
+}
+
+
+.date {
+    text-decoration:none;
+    margin-left: 10%;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    align: right;
+    font-size: 32px;
+
+}
+.text {
+    text-decoration:none;
+    margin-left: 10%;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 32px;
+    align: left;
 }
