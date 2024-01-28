@@ -1,8 +1,9 @@
 from django.db import models
 
 class GalleryItem(models.Model):
+    file = models.FileField(upload_to='main/static/main/img')
+
     title = models.CharField('title', max_length=150)
-    way = models.TextField('way')
     text = models.TextField('some_info')
 
     def __str__(self):
@@ -19,6 +20,5 @@ class Events(models.Model):
     class Meta:
         verbose_name = 'Event'
         verbose_name_plural = 'Events'
-
 
 
